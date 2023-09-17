@@ -7,7 +7,10 @@ const packageJSON = require("../package.json");
 const prodConfig = {
     mode: "production",
     output: {
+        // added hash, detect the changed in the prod environment
         filename: "[name].[contenthash].js",
+        // redirect remote cloudfront directory
+        publicPath: "/marketing/latest/",
     },
     plugins: [
         new ModuleFederationPlugin({
