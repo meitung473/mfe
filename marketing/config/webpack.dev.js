@@ -6,10 +6,15 @@ const packageJSON = require("../package.json");
 const path = require("path");
 const root = process.cwd();
 
+const PORT = 8081;
+
 const devConfig = {
     mode: "development",
+    output: {
+        publicPath: `http://localhost:${PORT}/`,
+    },
     devServer: {
-        port: 8081,
+        port: PORT,
         historyApiFallback: {
             index: "index.html",
         },
